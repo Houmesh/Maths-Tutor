@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1f6feb" />
+  <meta name="description" content="CBSE Class 7 Maths Tutor - Ganita Prakash practice, tests, voice tutoring and parent progress dashboard." />
+  <title>My Maths Tutor – Class 7</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="appShell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">CBSE • CLASS 7 • GANITA PRAKASH</div>
+        <h1>My Maths Tutor</h1>
+      </div>
+      <div class="top-actions">
+        <button id="installBtn" class="button ghost hidden">Install App</button>
+        <button id="settingsBtn" class="icon-button" aria-label="Settings">⚙️</button>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <button data-view="home" class="nav-item active">🏠<span>Home</span></button>
+      <button data-view="learn" class="nav-item">📘<span>Learn</span></button>
+      <button data-view="practice" class="nav-item">✏️<span>Practice</span></button>
+      <button data-view="test" class="nav-item">🧪<span>Tests</span></button>
+      <button data-view="tutor" class="nav-item">🎤<span>Tutor</span></button>
+      <button data-view="parent" class="nav-item">📊<span>Parent</span></button>
+    </nav>
+
+    <main id="main" class="main"></main>
+  </div>
+
+  <dialog id="setupDialog" class="dialog">
+    <form method="dialog" id="setupForm" class="dialog-card">
+      <h2>Set up the tutor</h2>
+      <p class="muted">This stays on this laptop unless you later add cloud sync.</p>
+      <label>Student name
+        <input id="studentNameInput" required maxlength="30" placeholder="e.g. Aarav" />
+      </label>
+      <label>Tutor language
+        <select id="languageInput">
+          <option value="English">English</option>
+          <option value="Hinglish">Hinglish</option>
+          <option value="Hindi">Hindi</option>
+        </select>
+      </label>
+      <label>Daily goal
+        <select id="goalInput">
+          <option value="10">10 questions</option>
+          <option value="15" selected>15 questions</option>
+          <option value="20">20 questions</option>
+          <option value="25">25 questions</option>
+        </select>
+      </label>
+      <label>Parent PIN
+        <input id="pinInput" required inputmode="numeric" pattern="[0-9]{4,8}" maxlength="8" placeholder="4–8 digits" />
+      </label>
+      <button class="button primary" value="default">Start learning</button>
+    </form>
+  </dialog>
+
+  <dialog id="settingsDialog" class="dialog">
+    <form method="dialog" id="settingsForm" class="dialog-card">
+      <div class="row between">
+        <h2>Settings</h2>
+        <button class="icon-button" value="cancel" aria-label="Close">✕</button>
+      </div>
+      <label>Student name
+        <input id="settingsName" maxlength="30" />
+      </label>
+      <label>Tutor language
+        <select id="settingsLanguage">
+          <option value="English">English</option>
+          <option value="Hinglish">Hinglish</option>
+          <option value="Hindi">Hindi</option>
+        </select>
+      </label>
+      <label>Daily goal
+        <select id="settingsGoal">
+          <option value="10">10 questions</option>
+          <option value="15">15 questions</option>
+          <option value="20">20 questions</option>
+          <option value="25">25 questions</option>
+        </select>
+      </label>
+      <label class="switch-row"><span>Read tutor replies aloud</span><input id="settingsSpeak" type="checkbox" /></label>
+      <button id="saveSettingsBtn" class="button primary" value="default">Save</button>
+    </form>
+  </dialog>
+
+  <template id="toastTemplate"><div class="toast"></div></template>
+  <script src="app.js" defer></script>
+</body>
+</html>
